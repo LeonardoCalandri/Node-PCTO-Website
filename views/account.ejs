@@ -23,12 +23,12 @@
         <p>Username: <%= data.userName %> </p>
         <form method="post" action="/user/modify/mail">
             <label for="E-Mail">E-Mail: </label>
-            <input type="email" id="mail" name="mail" placeholder="<%= data.mail %>">
+            <input type="email" id="mail" name="mail" placeholder="<%= data.mail %>" required>
             <input type="submit" value="Modifica Mail">
         </form>
         <form method="post" action="/user/modify/password">
             <label for="password">Password: </label>
-            <input type="password" id="name" name="name" placeholder="**********">
+            <input type="password" id="password" name="password" placeholder="**********" required>
             <input type="submit" value="Modifica Password">
         </form>
         <h2><%= data.message %></h2>

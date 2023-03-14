@@ -102,9 +102,9 @@ exports.account = (req, res) => {
     connection.then(async (Client) => {
       //we declare the function async in order to use await when executing the query
       let collection = Client.db("sitoTurismo").collection("users"); //we access the collection containing the list of users and their passwords
-      let result = await collection.findOne({ userName: req.session.name }); // we use await to wait for the result, if we do not use await the result will be undefined since the function did not have the time to retrieve the data from the db
+      let result = await collection.findOne({ userName: req.session["name"] }); //name refers to the username saved inside the session, we use await to wait for the result, if we do not use await the result will be undefined since the function did not have the time to retrieve the data from the db
       if (!result) {
-        res.render("user", { data: "username or password invalida" }); //we pass the data to the page using render
+        res.render("user", { data: "Creare account" }); //we pass the data to the page using render
       } else {
         console.log(result);
         res.render("account", {
@@ -125,7 +125,7 @@ exports.account = (req, res) => {
 };
 
 exports.modifyPassword = (req, res) => {
-  let hash = crypt.hashSync(req.password, 10);
+  let hash = crypt.hashSync(req.body.password, 10);
   let connection = mongoClient.connect(connectionString);
   connection.catch((error) => {
     console.log(error);
@@ -136,6 +136,7 @@ exports.modifyPassword = (req, res) => {
       { userName: req.session["name"] },
       { $set: { password: hash } }
     );
+    let result = await db.findOne({ userName: req.session["name"] })
     console.log("finished update");
     res.render("account", {
       data: {
@@ -161,6 +162,7 @@ exports.modifyMail = (req, res) => {
       { userName: req.session["name"] },
       { $set: { mail: req.body.mail } }
     );
+     let result = await db.findOne({ userName: req.session["name"] })
     console.log("finished update");
     res.render("account", {
       data: {
