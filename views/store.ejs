@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="styleSheet" href="../css/styleSheet_store.css">
+    <link rel="styleSheet" href="../css/styleSheet.css">
+    <script>
+        function payment_page() {
+            document.querySelector("#payment_form").style.display = "block";
+        }
+        function accessAlert() {
+            alert("You have already bought this service"); 
+        }
+    </script>
+    <% let action="" ; 
+    console.log(data); 
+    if(!data.name)
+    { 
+        console.log(data.name)
+       // action="window.location.href='/user'" 
+    }else if(data.hasAccess == true)
+    { 
+        action="accessAlert()"; 
+    } 
+    else
+    { 
+        action="payment_page()"
+    } %>
+</head>
+
+<body>
+    <article>
+        <div id="payment_form" style="display: none;">
+            <form method="POST" action="/user/payment">
+                <fieldset>
+                    <legend>Credit Card Information</legend>
+                    <label for="titolare">Titolare Carta: </label>
+                    <input type="text" name="titolare" id="titolare" required>
+                    <label for="numero_carta">Numero Carta: </label>
+                    <input type="text" name="numero_carta" id="numero_carta" required >
+                    <label for="scadenza">Scadenza: </label>
+                    <input type="month" name="scadenza" id="scadenza" required>
+                    <label for="cvv">CVV: </label>
+                    <input type="text" name="cvv" id="cvv" required>
+
+                    <input type="submit" value="Acquista">
+                </fieldset>
+            </form>
+        </div>
+    </article>
+    <button type="button" onclick=<%=action%>>BUY GUIDE</button>
+
+</body>
+
+</html>

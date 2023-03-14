@@ -1,0 +1,10 @@
+﻿#header { /*makes the header align to the center*/
+	text-align: center;
+	grid-column: 1/5;
+}
+
+article { /*makes articles take up the whole section they are in*/
+	display: block;
+	grid-column: 1/5;
+	text-align: center;
+}

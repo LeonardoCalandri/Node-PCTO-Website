@@ -1,0 +1,17 @@
+﻿article{/*makes articles take up the whole section they are in*/
+	display:block;
+	grid-column:1/5;
+}
+
+#london_header {/*makes the header align to the center*/
+	text-align: center;
+	grid-column: 1/5;
+}
+
+.london_header_image {/*sets the size of the small header images to 40% because any bigger makes them stack on top of eachother*/
+	width: 40%;
+}
+hr{/*sets the height and background of the hr line to make it look as requested*/
+	height:2px;
+	background-color:black;
+}

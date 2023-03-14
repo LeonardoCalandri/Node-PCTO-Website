@@ -1,0 +1,12 @@
+.cluster_image img{ /*used to shrink images in order to cluster them together*/
+    width:40%;
+    
+}
+.cluster_image{
+    display: inline-block;
+    margin-top: 30px;
+}
+#header{/*makes the header align to the center*/
+	text-align: center;
+    grid-column:1/5;
+}
