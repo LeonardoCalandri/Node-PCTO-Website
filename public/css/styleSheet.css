@@ -1,57 +1,88 @@
-﻿#city_wrapper{/*creates the grid template of the city pages to create a better layout*/
-	display:grid;
-	grid-template-columns: 1fr 4fr 4fr 1fr; /*divides the page into 4 section with relative size to the view port to make them reactive, with no problem regardless of device*/
-	gap:10px;
+﻿#city_wrapper {
+  /*creates the grid template of the city pages to create a better layout*/
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr; /*divides the page into 4 section with relative size to the view port to make them reactive, with no problem regardless of device*/
+  gap: 10px;
 }
-p{/*sets the font size used inside the paragraphs to be based of the view port*/
-	font-size: 2vw;
-}
-
-article{/*makes articles take up the whole section they are in*/
-	display:block;
-	grid-column:1/5;
-	margin-bottom:20px;
-}
-.link_button {  /*Styles the links to google maps in order to show which locations are openable*/
-	background:none;
-	border:none;
-	color:darkorange;
-	text-decoration:underline;
-	cursor:pointer;
-	font-size: 2.5vw;
-	font-family:serif;
-}
-.floating_article { /*used to make an article float in the center of the screen*/
-	display: block;
-	grid-column: 2/4;
-	text-align: center;
+p {
+  /*sets the font size used inside the paragraphs to be based of the view port*/
+  font-size: 2vw;
 }
 
-.left_article_image {/*used to make images position either to the left or right side of the page, in order to wrap the text around as requested */
-	float: left;
-	width: 50%;
-	margin-right: 10px;
+article {
+  /*makes articles take up the whole section they are in*/
+  display: block;
+  grid-column: 1/5;
+  margin-bottom: 20px;
 }
-.section{ /*used to separate articles into sections*/
-	display:inline-block;
+.link_button {
+  /*Styles the links to google maps in order to show which locations are openable*/
+  background: none;
+  border: none;
+  color: darkorange;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 2.5vw;
+  font-family: serif;
+}
+.floating_article {
+  /*used to make an article float in the center of the screen*/
+  display: block;
+  grid-column: 2/4;
+  text-align: center;
+}
+
+.left_article_image {
+  /*used to make images position either to the left or right side of the page, in order to wrap the text around as requested */
+  float: left;
+  width: 50%;
+  margin-right: 10px;
+}
+.section {
+  /*used to separate articles into sections*/
+  display: inline-block;
 }
 .right_article_image {
-	float: right;
-	width: 50%;
-	margin-left: 10px;
+  float: right;
+  width: 50%;
+  margin-left: 10px;
 }
-img { /*sets the base size of an image to 80%, images not inside an article need to be bigger as they are used as eye catchers*/
-	width: 80%;
-	text-align: center;
+img {
+  /*sets the base size of an image to 80%, images not inside an article need to be bigger as they are used as eye catchers*/
+  width: 80%;
+  text-align: center;
 }
-h1 {/*sets the font size for the h1 and h2 tags based on the view port*/
-	font-size: 5vw;
-	text-align: center;
-	grid-column: 1/5;
+h1 {
+  /*sets the font size for the h1 and h2 tags based on the view port*/
+  font-size: 5vw;
+  text-align: center;
+  grid-column: 1/5;
 }
 h2 {
-	font-size: 2.5vw;
-	text-align: center;
-	grid-column: 1/5;
+  font-size: 2.5vw;
+  text-align: center;
+  grid-column: 1/5;
 }
 
+.nav {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  
+}
+
+.nav a {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #eeeeee;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #cccccc;
+}
+
+.nav img{
+  width: 40%;
+  
+}

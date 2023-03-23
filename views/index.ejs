@@ -1,34 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <ul>
-        <!--all the hrefs need to be routed using router.get and not router.post -->
-        <li><a href="/city/london">london</a></li>
-        <li><a href="/city/milano">milano</a></li>
-        <li><a href="/city/parigi">parigi</a></li>
-        <li><a href="/city/tokyo">tokyo</a></li>
-        <li><a href="/city/barcellona">barcellona</a></li>
-        <li><a href="/city/iasi">iasi</a></li>
-        <li><a href="/user">login</a></li>
-        <li><a href="/user/store">store</a></li>
-        <li><a href="/user/account">Account</a></li>
-        <li><a href="/testsession">session</a></li>
-        
-    </ul>
-</body>
+    <link rel="stylesheet" href="../css/styleSheet.css" />
+    <link rel="stylesheet" href="../css/styleSheet_Home.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <!--all the hrefs need to be routed using router.get and not router.post -->
+      <a href="/">Home</a>
+      <a href="/user">login</a>
+      <a href="/user/store">store</a>
+      <a href="/user/account">Account</a>
+      <a href="/testsession">session</a>
+      <img src="../images/Logo.png">
+    </nav>
+    <section id="page-wrapper">
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/milano">milano</a></h4>
+        </div>
+        <p>
+          Capitale creativa della moda e del lusso, Milano è una città
+          all'avanguardia, attivissima sotto il profilo economico e culturale,
+          una realtà tutta da scoprire per conoscere i suoi tesori nascosti tra
+          scorci poetici, palazzine in stile liberty e piccole perle
+          architettoniche che spaziano dallo stile gotico al romanico,
+          disseminate nel suo bellissimo ed antichissimo centro storico, motivo
+          che spinge ogni giorno milioni di visitatori da ogni parte del mondo a
+          visitare la città del fascino e del glamour.
+        </p>
+      </div>
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/parigi">parigi</a></h4>
+        </div>
+        <p>
+          Simbolo per eccellenza del romanticismo, Parigi è un mix frizzante di
+          arte e cultura, storia e architettura, bei negozi e ottimo cibo. La
+          Senna divide la città nella Rive Droite (Riva Destra) a nord del fiume
+          e La Rive Gauche (Riva Sinistra) a sud del fiume. La città è divisa in
+          20 arrondissements (distretti) che a spirale si diramano dal centro
+          come una conchiglia.
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </div>
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/tokyo">tokyo</a></h4>
+        </div>
+        <p>
+          Tokyo, oltre ad essere la capitale più orientale del mondo, è
+          indubbiamente la metropoli più affascinante d'Asia anche se, in
+          realtà, conserva molto poco della città originaria che fu fondata nel
+          XV secolo, a parte il Palazzo Imperiale e i giardini che lo
+          circondano; infatti, a causa di un terribile terremoto, ma soprattutto
+          dopo i bombardamenti della Seconda Guerra Mondiale, il centro abitato
+          è andato completamente distrutto. Moderna metropoli con maestosi
+          grattacieli e strade sempre affollate. 
+        </p>
+      </div>
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/barcellona">barcellona</a></h4>
+        </div>
+        <p>
+          Capoluogo della Catalogna, Barcellona è una città unica, affascinante
+          e coinvolgente; una destinazione dove scoprire architetture
+          eclettiche, respirare un'atmosfera vitale e godersi una movida
+          indimenticabile. Come tutte le città di porto, Barcellona si presenta
+          essere una delle pià multirazziali, aperte e cosmopolita della Spagna
+          interna, un vero e proprio paradiso per chi ama la modernità ma, nello
+          stesso tempo, è affascinato dalle antiche tradizioni che legano arte,
+          cultura e svago. 
+        </p>
+      </div>
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/london">london</a></h4>
+        </div>
+        <p>
+          Londra è considerata una città multietniche e cosmopolita la cui
+          vitalità artistica, produttiva e ovviamente turistica, è sotto gli
+          occhi di tutti coloro che si avventurano per le strade trafficate e
+          frequentatissime del suo centro storico ed offre tutto quello che una
+          persona possa chiedere. I musei di Londra conservano collezioni
+          artistiche di primo piano nel panorama mondiale e i monumenti storici
+          cittadini non mancano di affascinare i propri visitatori con la
+          millenaria storia dell'area su cui sorge questa affascinante capitale.
+          
+        </p>
+      </div>
+      <div class="city-card">
+        <img src="../images/placeholder.png" />
+        <div class="city-card-container">
+          <h4><a href="/city/iasi">iasi</a></h4>
+        </div>
+        <p>
+          Iași è la città più grande della Romania orientale e il centro
+          amministrativo della contea di Iași. Iași, situato nella storica
+          provincia della Moldavia, è stato a lungo uno dei centri più
+          importanti della vita sociale, culturale, intellettuale e artistica
+          rumena. Dal 1564 al 1859 la città fu capitale del Principato di
+          Moldavia, poi dei Principati Uniti dal 1859 al 1862 e della Romania
+          dal 1916 al 1918. <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </p>
+      </div>
+    </section>
+  </body>
 </html>
-
-
-
-
-
-
-
-

@@ -10,13 +10,15 @@
     
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/user/store">Store</a></li>
-            <li><a href="/user/account">Account</a></li>
-        </ul>
-    </nav>
+    <nav class="nav">
+        <!--all the hrefs need to be routed using router.get and not router.post -->
+        <a href="/">Home</a>
+        <a href="/user">login</a>
+        <a href="/user/store">store</a>
+        <a href="/user/account">Account</a>
+        <a href="/testsession">session</a>
+        <img src="../images/Logo.png">
+      </nav>
     <section id="city_wrapper">
         <div id="header" style="text-align: center;">
             <h1>T O K Y O</h1>

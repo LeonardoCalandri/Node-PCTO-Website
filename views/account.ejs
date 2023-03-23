@@ -5,24 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Area utente</title>
+    <link rel="styleSheet" href="../css/styleSheet.css">
+    <link rel="styleSheet" href="../css/styleSheet_account.css">
 </head>
 <body>
     <!-- nome cognome, modifica mail, cambia password, status acquisto-->
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/user/store">Store</a></li>
-            <li><a href="/user/account">Account</a></li>
-        </ul>
-    </nav>
+    <nav class="nav">
+        <!--all the hrefs need to be routed using router.get and not router.post -->
+        <a href="/">Home</a>
+        <a href="/user">login</a>
+        <a href="/user/store">store</a>
+        <a href="/user/account">Account</a>
+        <a href="/testsession">session</a>
+        <img src="../images/Logo.png">
+      </nav>
 
     <br>
         <h2> Dati Utente</h2>
+    <!-- <div class="data-area">
         <p>Name: <%= data.name %> </p>
         <p>Surname: <%= data.surname %> </p>
         <p>Username: <%= data.userName %> </p>
         <form method="post" action="/user/modify/mail">
-            <label for="E-Mail">E-Mail: </label>
+            <span class="data-field-category">CAMBIA PASSWORD:</span>
             <input type="email" id="mail" name="mail" placeholder="<%= data.mail %>" required>
             <input type="submit" value="Modifica Mail">
         </form>
@@ -31,6 +36,26 @@
             <input type="password" id="password" name="password" placeholder="**********" required>
             <input type="submit" value="Modifica Password">
         </form>
+    </div> -->
+    <div class="data-area">
+        <h3>User Information</h3>
+        <div class="data-field">
+            <p><span class="data-field-category">NAME:</span> <%= data.name %> </p>
+            <p><span class="data-field-category">SURNAME:</span> <%= data.surname %> </p>
+            <p><span class="data-field-category">USERNAME:</span> <%= data.userName %> </p>
+            <p><span class="data-field-category">EMAIL:</span> <%= data.mail %> </p>
+            <form method="post" action="/user/modify/mail">
+                <span class="data-field-category">CAMBIA EMAIL:</span>
+                <input type="email" id="mail" name="mail" placeholder="<%= data.mail %>" required>
+                <input type="submit" value="Modifica Mail">
+            </form>
+            <form method="post" action="/user/modify/password">
+                <span class="data-field-category">CAMBIA PASSWORD:</span>
+                <input type="password" id="password" name="password" placeholder="**********" required>
+                <input type="submit" value="Modifica Password">
+            </form>
+        </div>
+    </div>
         <h2><%= data.message %></h2>
     </article>
 </body>
