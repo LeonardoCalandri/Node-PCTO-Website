@@ -61,9 +61,9 @@ exports.login = (req, res) => {
 exports.logOut = (req, res) => {
   if (req.session) {
     req.session.destroy();
-    res.render("user", { data: "logged out" });
+    res.render("login", { data: {message:"logged out"} });
   } else {
-    res.render("user", { data: "no data" });
+    res.render("login", { data: {message:"no data"} });
   }
 };
 
@@ -93,7 +93,7 @@ exports.payment = (req, res) => {
       { $set: { hasAccess: true } }
     );
     req.session["hasAccess"] = true;
-    res.render("user", { data: "Acquisto completato" });
+    res.render("login", { data: {message:"Acquisto completato"} });
   }); //.then
 };
 
@@ -108,7 +108,7 @@ exports.account = (req, res) => {
       let collection = Client.db("sitoTurismo").collection("users"); //we access the collection containing the list of users and their passwords
       let result = await collection.findOne({ userName: req.session["name"] }); //name refers to the username saved inside the session, we use await to wait for the result, if we do not use await the result will be undefined since the function did not have the time to retrieve the data from the db
       if (!result) {
-        res.render("user", { data: "Login" }); //we pass the data to the page using render
+        res.render("login", { data: {message:"Login"} }); //we pass the data to the page using render
       } else {
         console.log(result);
         res.render("account", {
@@ -124,7 +124,7 @@ exports.account = (req, res) => {
       }
     });
   } else {
-    res.render("user", { data: "please make an account" });
+    res.render("signUp", { data: {message:"please make an account"} });
   }
 };
 

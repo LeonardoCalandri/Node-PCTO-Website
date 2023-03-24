@@ -20,8 +20,7 @@
     console.log(data); 
     if(!data.name)
     { 
-        console.log(data.name)
-       // action="window.location.href='/user'" 
+       action="window.location.href='/user/LoginPage'" 
     }else if(data.hasAccess == true)
     { 
         action="accessAlert()"; 
@@ -70,7 +69,6 @@
                     <input type="month" name="scadenza" id="scadenza" required>
                     <label for="cvv">CVV: </label>
                     <input type="text" name="cvv" id="cvv" required>
-
                     <input type="submit" value="Acquista">
                 </fieldset>
             </form>

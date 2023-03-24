@@ -125,6 +125,7 @@ h2 {
 /* account , login, signup forms and data */
 .data-area{
   margin-left: 40%;
+  margin-top: 2vw;
   border: 2px solid black;
   border-radius: 20px;
   width: 20vw;

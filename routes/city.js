@@ -8,7 +8,7 @@ const authmiddleware = (req, res, next) =>{ //used to check user permission and 
        }else if(req.session['name']){
         res.render('store',{data: {name: req.session["name"], hasAccess: req.session["hasAccess"]}});
        }else{
-        res.render('user',{data: 'please make an account'});
+        res.render('signUp',{data: {message:'please make an account'}});
        }
 }
 
