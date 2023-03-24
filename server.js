@@ -58,7 +58,7 @@ app.use('/user' , userRouter);//the user resource contains both login and signup
 app.use('/city' , cityRouter);//makes it so every url containing the /city path is managed by the router
 app.use('/routing', gpsRouter);
 app.get('/', (req, res)=>{
-    res.render("index");
+    res.render("index", { data: {name :req.session["name"]} });
 });
 
 

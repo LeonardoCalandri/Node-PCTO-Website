@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area utente</title>
+    <title>USER SignUp</title>
     <link rel="styleSheet" href="../css/styleSheet.css">
 </head>
+
 <body>
-    <!-- nome cognome, modifica mail, cambia password, status acquisto-->
     <nav class="nav">
         <% console.log(data.name) 
           let loginState=" ";
@@ -34,28 +35,23 @@
         <img src="../images/Logo.png">
       </nav>
 
-    <br>
-        <h2> Dati Utente</h2>
+  <form method="POST" action="/user/SignUp">
     <div class="data-area">
-        <h3>User Information</h3>
+        <h3>SignUp</h3>
         <div class="data-field">
-            <p><span class="data-field-category">NAME:</span> <%= data.name %> </p>
-            <p><span class="data-field-category">SURNAME:</span> <%= data.surname %> </p>
-            <p><span class="data-field-category">USERNAME:</span> <%= data.userName %> </p>
-            <p><span class="data-field-category">EMAIL:</span> <%= data.mail %> </p>
-            <form method="post" action="/user/modify/mail">
-                <span class="data-field-category">CAMBIA EMAIL:</span>
-                <input type="email" id="mail" name="mail" placeholder="<%= data.mail %>" required>
-                <input type="submit" value="Modifica Mail">
-            </form>
-            <form method="post" action="/user/modify/password">
-                <span class="data-field-category">CAMBIA PASSWORD:</span>
-                <input type="password" id="password" name="password" placeholder="**********" required>
-                <input type="submit" value="Modifica Password">
-            </form>
+            <p><span class="data-field-category">NAME: </span><input type="text" id="Name" name="Name" /> </p>
+            <p><span class="data-field-category">SURNAME: </span><input type="text" id="surName" name="surName" /> </p>
+            <p><span class="data-field-category">USERNAME: </span>  <input type="text" id="userName" name="userName" /> </p>
+            <p><span class="data-field-category">PASSWORD: </span>  <input type="password" id="password" name="password" />
+            <p><span class="data-field-category">EMAIL: <input type="email" id="mail" name="mail"/></p>
+            <input type="submit" value="submit">
         </div>
+        <a href="/user/LoginPage">Login</a>
     </div>
-        <h2><%= data.message %></h2>
-    </article>
+</form>
+    
+
+    <h2><%= data.message%></h2>
 </body>
+
 </html>

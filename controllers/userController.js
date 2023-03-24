@@ -14,7 +14,7 @@ exports.signUp = (req, res) => {
     let collection = Client.db("sitoTurismo").collection("users"); //we access the collection containing the list of users and their passwords
     let result = await collection.findOne({ userName: user.userName });
     if (result) {
-      res.render("user", { data: "user already exists" }); //we use render in order to pass data to the page
+      res.render("signUp", { data: {message:"username non disponibile"} }); //we use render in order to pass data to the page
     } else {
       let hash = crypt.hashSync(user.password, 10);
       collection.insertOne({
@@ -25,7 +25,7 @@ exports.signUp = (req, res) => {
         name: req.body.Name,
         surname: req.body.surName,
       });
-      res.render("user", { data: "Registred successfully" });
+      res.render("messagePage", { data: "Registred successfully" });
     }
   });
 };
@@ -42,7 +42,7 @@ exports.login = (req, res) => {
     console.log(JSON.stringify(user));
     let result = await collection.findOne({ userName: user.name }); // we use await to wait for the result, if we do not use await the result will be undefined since the function did not have the time to retrieve the data from the db
     if (!result) {
-      res.render("user", { data: "username or password invalida" }); //we pass the data to the page using render
+      res.render("login", { data: {message:"username or password invalida"}}); //we pass the data to the page using render
     } else {
       let isUser = await crypt.compare(user.password, result.password); //we use await to wait for the results
       console.log(isUser);
@@ -50,9 +50,9 @@ exports.login = (req, res) => {
         let access = result.hasAccess;
         req.session["name"] = result.userName;
         req.session["hasAccess"] = access;
-        res.render("user", { data: "benvenuto" });
+        res.render("messagePage", { data: "benvenuto" });
       } else {
-        res.render("user", { data: "username or password invalida" });
+        res.render("login", { data: {message:"username or password invalida"} });
       }
     }
   }); //connection then
@@ -67,8 +67,12 @@ exports.logOut = (req, res) => {
   }
 };
 
-exports.page = (req, res) => {
-  res.render("user", { data: " " });
+exports.signUpPage = (req, res) => {
+  res.render("signUp", { data: {name :req.session["name"]} });
+};
+
+exports.LoginPage = (req, res) => {
+  res.render("login", { data: {name :req.session["name"]} });
 };
 
 exports.store = (req, res) => {

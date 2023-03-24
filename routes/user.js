@@ -8,7 +8,7 @@ router.post("/signUp", dataController.signUp);
 
 router.post("/login", dataController.login);
 
-router.post("/logout", dataController.logOut);
+router.get("/logout", dataController.logOut);
 
 router.post("/modify/password",dataController.modifyPassword);
 
@@ -20,6 +20,8 @@ router.post("/payment",dataController.payment);
 
 router.get("/account",dataController.account);
 
-router.get('/', dataController.page);
+router.get('/LoginPage', dataController.LoginPage);
+
+router.get('/signUpPage', dataController.signUpPage);
 
 module.exports = router;

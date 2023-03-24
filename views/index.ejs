@@ -7,14 +7,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/styleSheet.css" />
     <link rel="stylesheet" href="../css/styleSheet_Home.css" />
+    
   </head>
   <body>
     <nav class="nav">
+      <% console.log(data.name) 
+        let loginState=" ";
+        let logOutState=" ";
+        if(data.name){
+          loginState = 'style=display:none;';
+        }else{
+          logOutState = 'style=display:none;';
+        }
+    %>
       <!--all the hrefs need to be routed using router.get and not router.post -->
       <a href="/">Home</a>
-      <a href="/user">login</a>
       <a href="/user/store">store</a>
-      <a href="/user/account">Account</a>
+      <div class="dropdown">
+        <a class="dropbtn">Account</a>
+        <div class="dropdown-content">
+          <a href="/user/account"  <%= logOutState %>>Account</a>
+          <a href="/user/logout" <%= logOutState %>>LogOut</a>
+          <a href="/user" <%= loginState %>>login</a>
+        </div>
+      </div>
       <a href="/testsession">session</a>
       <img src="../images/Logo.png">
     </nav>
@@ -22,7 +38,7 @@
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/milano">milano</a></h4>
+          <h4><a href="/city/milano">Milano</a></h4>
         </div>
         <p>
           Capitale creativa della moda e del lusso, Milano è una città
@@ -33,12 +49,14 @@
           disseminate nel suo bellissimo ed antichissimo centro storico, motivo
           che spinge ogni giorno milioni di visitatori da ogni parte del mondo a
           visitare la città del fascino e del glamour.
+          <br>
+          <br>
         </p>
       </div>
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/parigi">parigi</a></h4>
+          <h4><a href="/city/parigi">Parigi</a></h4>
         </div>
         <p>
           Simbolo per eccellenza del romanticismo, Parigi è un mix frizzante di
@@ -51,13 +69,12 @@
           <br>
           <br>
           <br>
-          <br>
         </p>
       </div>
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/tokyo">tokyo</a></h4>
+          <h4><a href="/city/tokyo">Tokyo</a></h4>
         </div>
         <p>
           Tokyo, oltre ad essere la capitale più orientale del mondo, è
@@ -73,7 +90,7 @@
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/barcellona">barcellona</a></h4>
+          <h4><a href="/city/barcellona">Barcellona</a></h4>
         </div>
         <p>
           Capoluogo della Catalogna, Barcellona è una città unica, affascinante
@@ -84,12 +101,15 @@
           interna, un vero e proprio paradiso per chi ama la modernità ma, nello
           stesso tempo, è affascinato dalle antiche tradizioni che legano arte,
           cultura e svago. 
+          <br>
+          <br>
+          
         </p>
       </div>
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/london">london</a></h4>
+          <h4><a href="/city/london">London</a></h4>
         </div>
         <p>
           Londra è considerata una città multietniche e cosmopolita la cui
@@ -106,7 +126,7 @@
       <div class="city-card">
         <img src="../images/placeholder.png" />
         <div class="city-card-container">
-          <h4><a href="/city/iasi">iasi</a></h4>
+          <h4><a href="/city/iasi">Iasi</a></h4>
         </div>
         <p>
           Iași è la città più grande della Romania orientale e il centro
@@ -118,8 +138,7 @@
           dal 1916 al 1918. <br>
           <br>
           <br>
-          <br>
-          <br>
+          
         </p>
       </div>
     </section>
