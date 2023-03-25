@@ -6,17 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Milano</title>
     <link rel="stylesheet" href="../css/styleSheet.css" />
-    <link rel="stylesheet" href="../css/styleSheet_milano.css" />
+    <link rel="stylesheet" href="../css/styleSheet_milano.css"/>
    
 </head>
 <body>
     <nav class="nav">
+        <%  
+          let loginState=" ";
+          let logOutState=" ";
+          if(data.name){
+            loginState = 'style=display:none;';
+          }else{
+            logOutState = 'style=display:none;';
+          }
+      %>
         <!--all the hrefs need to be routed using router.get and not router.post -->
         <a href="/">Home</a>
-        <a href="/user">login</a>
         <a href="/user/store">store</a>
-        <a href="/user/account">Account</a>
-        <a href="/testsession">session</a>
+        <div class="dropdown">
+          <a class="dropbtn">Account</a>
+          <div class="dropdown-content">
+            <a href="/user/account"  <%= logOutState %>>Account</a>
+            <a href="/user/logout" <%= logOutState %>>LogOut</a>
+            <a href="/user/LoginPage" <%= loginState %>>login</a>
+          </div>
+        </div>
+        
         <img src="../images/Logo.png">
       </nav>
     <section id="city_wrapper" >

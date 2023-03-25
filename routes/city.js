@@ -14,22 +14,22 @@ const authmiddleware = (req, res, next) =>{ //used to check user permission and 
 
 //We prepare all the routers that will manage the calls to /city 
 router.get('/london', authmiddleware,(req, res)=>{ // once the script reaches this point it already considers itself inside /city so we do not need to add the /city before the new ones
-    res.sendFile('london.html', {root:path  + "/public"});  //we get the absolute path to the public folder
+    res.render("london", { data: {name :req.session["name"]} });;  //we get the absolute path to the public folder
 });
 router.get('/barcellona', authmiddleware,(req, res)=>{ 
-    res.sendFile('barcellona.html', {root:path  + "/public"}); 
+    res.render("barcellona", { data: {name :req.session["name"]} }); 
 });
 router.get('/iasi', authmiddleware,(req, res)=>{ 
-    res.sendFile('iasi.html', {root:path  + "/public"}); 
+    res.render("iasi", { data: {name :req.session["name"]} }); 
 });
 router.get('/milano', authmiddleware,(req, res)=>{ 
-    res.sendFile('milano.html', {root:path  + "/public"}); 
+    res.render("milano", { data: {name :req.session["name"]} });
 });
 router.get('/parigi', authmiddleware,(req, res)=>{ 
-    res.sendFile('parigi.html', {root:path  + "/public"}); 
+    res.render("parigi", { data: {name :req.session["name"]} }); 
 });
 router.get('/tokyo',authmiddleware, (req, res)=>{ 
-    res.sendFile('tokyo.html', {root:path  + "/public"}); 
+    res.render("tokyo", { data: {name :req.session["name"]} });
 });
 
 

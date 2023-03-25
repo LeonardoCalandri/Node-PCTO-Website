@@ -42,10 +42,7 @@ app.use(session({
     }
 }));
 
-app.get('/testsession', (req,res) =>{
-    console.log(req.session);
-    res.send(req.session);
-})
+
 
 
 app.use(express.static(__dirname + '/public'));//makes it so the base path will always include public in it, allowing us to access the files inside the html pages
