@@ -142,3 +142,25 @@ h2 {
 .data-field-category{
   font-size: small;
 }
+@media (max-width: 750px) {
+  /* CSS that should be displayed if width is equal to or less than 750px goes here */
+  .data-area{
+    margin-left: 20%;
+    margin-top: 30vw;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 55vw;
+    text-align: center;
+  }
+  .data-field p:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background-color: rgb(240, 239, 239);
+    transition: 0.3s;
+  }
+  .data-field{
+    font-size: 2vw;
+  }
+  .data-field-category{
+    font-size: small;
+  }
+}

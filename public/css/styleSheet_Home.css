@@ -15,7 +15,7 @@
     font-size: 60%;
 }
 @media (min-width: 750px) {
-    /* CSS that should be displayed if width is equal to or less than 750px goes here */
+    /* CSS that should be displayed if width is equal to or more than 750px goes here */
     .city-card {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         transition: 0.3s;
@@ -29,5 +29,20 @@
         margin-right: 2vw;
         margin-bottom: 4vw;
         margin-left: 8vw;
+    }
+  }
+
+  @media (max-width: 750px) {
+    /* CSS that should be displayed if width is equal to or less than 750px goes here */
+    .city-card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+        /*we center the contents based on the view port*/
+        margin-top: 2vw;
+        margin-bottom: 4vw;
+       
     }
   }
